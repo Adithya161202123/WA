@@ -122,24 +122,25 @@ body{
 
 /* Circular wrapper — clips to a circle */
 .avatar-wrap{
-    width:140px;
-    height:140px;
+    width:150px;
+    height:150px;
     border-radius:50%;
     overflow:hidden;
     border:4px solid #ff6f9f;
     box-shadow:0 8px 28px rgba(255,111,159,0.35);
     flex-shrink:0;
-    transition:2s ease-in-out;
     position:relative;
 }
 
-/* Image fills the circle; object-position top shows the face */
+/* Image is bigger than the circle so we can pan to the face */
 .girl-character,
 .boy-character{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:top center;
+    position:absolute;
+    width:200%;          /* zoom in — 2x wider than the circle */
+    height:auto;
+    left:50%;
+    top:0%;              /* start from top of image */
+    transform:translateX(-50%);  /* centre horizontally */
     display:block;
 }
 
@@ -377,8 +378,8 @@ body{
 /* ---------------- MOBILE ---------------- */
 
 @media(max-width:768px){
-    .avatar-wrap{ width:110px; height:110px; }
-    .scene{ gap:30px; }
+    .avatar-wrap{ width:120px; height:120px; }
+    .scene{ gap:30px; height:200px; }
     .message{ font-size:16px; }
     .final-text{ font-size:24px; }
     .open-text{ font-size:20px; }
@@ -417,9 +418,10 @@ body{
                     src="https://raw.githubusercontent.com/Adithya161202123/WA/main/Screenshot_20260512_134721.jpg"
                     class="girl-character"
                     id="girl"
+                    style="top:5%;"
                     alt="Her">
             </div>
-            <div class="avatar-label">Her 💖</div>
+            <div class="avatar-label">Chum 💖</div>
         </div>
 
         <!-- Boy avatar — slides in from right -->
@@ -429,9 +431,10 @@ body{
                     src="https://raw.githubusercontent.com/Adithya161202123/WA/main/Screenshot_20260512_134748.jpg"
                     class="boy-character"
                     id="boy"
+                    style="top:5%;"
                     alt="Him">
             </div>
-            <div class="avatar-label">Him 💙</div>
+            <div class="avatar-label">Chumbi 💙</div>
         </div>
 
     </div>
@@ -470,7 +473,7 @@ body{
     <div id="slideshow"></div>
     <div id="wordLayer"></div>
     <div class="dot-strip" id="dots"></div>
-    <div class="final-text">Happy 3rd Wedding Anniversary 💖</div>
+    <div class="final-text">Happy 3rd Anniversary 💖</div>
 
 </section>
 
