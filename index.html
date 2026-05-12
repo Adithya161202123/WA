@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Happy Anniversary</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Anniversary 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     overflow-x:hidden;
-    background:#ffdce5;
+    background:#ffdbe7;
+}
+
+/* ---------------- PAGE COMMON ---------------- */
+
+.page{
+    width:100%;
+    min-height:100vh;
+    position:relative;
 }
 
 /* ---------------- PAGE 1 ---------------- */
 
-.page{
-    width:100%;
-    height:100vh;
-    position:relative;
-}
-
 #page1{
-    background:linear-gradient(135deg,#ffd6df,#ffc6d6,#ffe7ee);
+    background:linear-gradient(135deg,#ffd6e0,#ffe6ee,#ffdbe7);
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-}
-
-.bg-hearts{
-    position:absolute;
-    width:100%;
-    height:100%;
     overflow:hidden;
 }
 
-.bg-hearts span{
+.hearts{
     position:absolute;
-    display:block;
-    color:#ff7da5;
-    font-size:20px;
+    width:100%;
+    height:100%;
+}
+
+.hearts span{
+    position:absolute;
+    color:#ff7ca8;
+    font-size:22px;
     animation:float 8s linear infinite;
     opacity:0.5;
 }
@@ -55,123 +64,149 @@ body{
         transform:translateY(100vh) scale(0);
     }
     100%{
-        transform:translateY(-10vh) scale(1.5);
+        transform:translateY(-20vh) scale(1.4);
     }
 }
 
 .envelope{
     width:260px;
     height:180px;
-    background:#ff7da5;
+    background:#ff6f9f;
     position:relative;
+    border-radius:12px;
     cursor:pointer;
     transition:0.5s;
-    border-radius:10px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
 }
 
 .envelope:hover{
     transform:scale(1.05);
 }
 
-.envelope:before{
+.envelope::before{
     content:'';
     position:absolute;
     top:0;
     left:0;
-    width:0;
-    height:0;
     border-left:130px solid transparent;
     border-right:130px solid transparent;
-    border-top:90px solid #ff9fbc;
-    transform-origin:top;
+    border-top:90px solid #ff99ba;
     transition:1s;
+    transform-origin:top;
 }
 
-.envelope:hover:before{
+.envelope:hover::before{
     transform:rotateX(180deg);
 }
 
-.click-text{
+.open-text{
     margin-top:30px;
-    font-size:22px;
-    color:#c24b73;
+    font-size:24px;
+    color:#c43f72;
     font-weight:600;
 }
 
 /* ---------------- PAGE 2 ---------------- */
 
 #page2{
-    background:#fff0f5;
+    background:linear-gradient(180deg,#fff0f6,#ffe3ec);
+    overflow:hidden;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
-    padding:20px;
+    padding:30px 20px;
 }
 
-.characters{
-    display:flex;
-    gap:50px;
-    align-items:center;
+.scene{
+    position:relative;
+    width:100%;
+    height:320px;
+    overflow:hidden;
 }
 
-.character{
-    text-align:center;
+.girl-character,
+.boy-character{
+    position:absolute;
+    bottom:0;
+    width:160px;
+    transition:2s ease-in-out;
 }
 
-.character img{
-    width:180px;
+.girl-character{
+    left:-200px;
 }
 
-.chat{
-    margin-top:40px;
+.boy-character{
+    right:-200px;
+}
+
+.girl-character.active{
+    left:22%;
+}
+
+.boy-character.active{
+    right:22%;
+}
+
+.conversation-box{
     width:90%;
     max-width:700px;
+    min-height:240px;
+    margin-top:20px;
 }
 
-.bubble{
-    padding:18px 22px;
+.message{
+    padding:16px 22px;
     margin:15px 0;
     border-radius:25px;
-    font-size:20px;
-    animation:fadeIn 1s forwards;
-    opacity:0;
+    font-size:18px;
+    animation:fadeUp 0.7s ease;
 }
 
-.girl{
-    background:#ffb3c8;
-    color:#6e2240;
-    align-self:flex-start;
+.girl-msg{
+    background:#ffb6cc;
+    color:#6b1f40;
 }
 
-.boy{
-    background:#8ed8ff;
-    color:#1a3c4f;
-    align-self:flex-end;
+.boy-msg{
+    background:#9edfff;
+    color:#183a4b;
     text-align:right;
 }
 
-@keyframes fadeIn{
+.hidden{
+    display:none;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
     to{
         opacity:1;
+        transform:translateY(0);
     }
 }
 
-.next-btn{
-    margin-top:30px;
-    padding:14px 30px;
+.chat-button,
+.continue-button{
+    margin-top:25px;
+    padding:14px 28px;
     border:none;
     border-radius:40px;
-    background:#ff6f9f;
+    background:#ff5d94;
     color:white;
     font-size:18px;
     cursor:pointer;
     transition:0.3s;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
 }
 
-.next-btn:hover{
-    background:#ff4f88;
+.chat-button:hover,
+.continue-button:hover{
+    transform:scale(1.05);
 }
 
 /* ---------------- PAGE 3 ---------------- */
@@ -221,8 +256,8 @@ body{
     position:absolute;
     width:220px;
     height:300px;
-    border-radius:20px;
     object-fit:cover;
+    border-radius:20px;
     box-shadow:0 10px 25px rgba(255,255,255,0.3);
     animation:shuffle 10s infinite;
 }
@@ -234,24 +269,30 @@ body{
 .photo:nth-child(5){animation-delay:8s;}
 
 @keyframes shuffle{
+
     0%{
         transform:scale(0.3) rotate(-10deg);
         opacity:0;
     }
+
     20%{
         transform:scale(1) rotate(0deg);
         opacity:1;
     }
+
     40%{
-        transform:translateX(-250px) rotate(-8deg);
+        transform:translateX(-220px) rotate(-8deg);
     }
+
     60%{
-        transform:translateX(250px) rotate(8deg);
+        transform:translateX(220px) rotate(8deg);
     }
+
     80%{
         transform:scale(0.8);
         opacity:1;
     }
+
     100%{
         transform:scale(0.2);
         opacity:0;
@@ -264,91 +305,124 @@ body{
     width:100%;
     text-align:center;
     color:white;
-    font-size:30px;
-    font-weight:bold;
+    font-size:32px;
+    font-weight:700;
     letter-spacing:2px;
 }
 
+/* ---------------- MOBILE ---------------- */
+
 @media(max-width:768px){
 
-.character img{
+.girl-character,
+.boy-character{
     width:120px;
 }
 
-.bubble{
-    font-size:17px;
+.girl-character.active{
+    left:10%;
+}
+
+.boy-character.active{
+    right:10%;
+}
+
+.message{
+    font-size:16px;
 }
 
 .photo{
     width:160px;
     height:220px;
 }
+
+.final-text{
+    font-size:24px;
 }
+
+.open-text{
+    font-size:20px;
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- ================= PAGE 1 ================= -->
 
 <section class="page" id="page1">
 
-<div class="bg-hearts">
-    <span style="left:10%">❤</span>
-    <span style="left:25%; animation-delay:2s;">❤</span>
-    <span style="left:40%; animation-delay:4s;">❤</span>
-    <span style="left:60%; animation-delay:1s;">❤</span>
-    <span style="left:75%; animation-delay:5s;">❤</span>
-    <span style="left:90%; animation-delay:3s;">❤</span>
+<div class="hearts">
+
+<span style="left:10%">❤</span>
+<span style="left:20%;animation-delay:2s;">❤</span>
+<span style="left:35%;animation-delay:4s;">❤</span>
+<span style="left:50%;animation-delay:1s;">❤</span>
+<span style="left:65%;animation-delay:3s;">❤</span>
+<span style="left:80%;animation-delay:5s;">❤</span>
+<span style="left:90%;animation-delay:2s;">❤</span>
+
 </div>
 
 <div class="envelope" onclick="goToPage2()"></div>
 
-<div class="click-text">
-    Tap the Envelope 💌
+<div class="open-text">
+Tap The Envelope 💌
 </div>
 
 </section>
 
-<!-- PAGE 2 -->
+<!-- ================= PAGE 2 ================= -->
 
 <section class="page" id="page2">
 
-<div class="characters">
+<div class="scene">
 
-<div class="character">
-<img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png">
-</div>
+<img 
+src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png"
+class="girl-character"
+id="girl">
 
-<div class="character">
-<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
-</div>
-
-</div>
-
-<div class="chat">
-
-<div class="bubble girl" style="animation-delay:1s;">
-What expression should I give today? 🌸
-</div>
-
-<div class="bubble boy" style="animation-delay:3s;">
-It’s our third anniversary ❤️
-</div>
-
-<div class="bubble girl" style="animation-delay:5s;">
-Then let’s make this moment timeless ✨
-</div>
+<img 
+src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png"
+class="boy-character"
+id="boy">
 
 </div>
 
-<button class="next-btn" onclick="goToPage3()">
+<div class="conversation-box">
+
+<div class="message girl-msg hidden" id="msg1">
+Heyy 💖 What expression should we give today?
+</div>
+
+<div class="message boy-msg hidden" id="msg2">
+It's our 3rd Anniversary 🌸
+</div>
+
+<div class="message girl-msg hidden" id="msg3">
+Awww... then today should be magical ✨
+</div>
+
+<div class="message boy-msg hidden" id="msg4">
+Every moment with you already is ❤️
+</div>
+
+</div>
+
+<button id="chatBtn" class="chat-button">
+Click Here To Chat 💌
+</button>
+
+<button id="continueBtn" class="continue-button hidden">
 Continue ✨
 </button>
 
 </section>
 
-<!-- PAGE 3 -->
+<!-- ================= PAGE 3 ================= -->
 
 <section class="page" id="page3">
 
@@ -356,7 +430,7 @@ Continue ✨
 
 <div class="gallery">
 
-<!-- Replace these with your own images -->
+<!-- Replace these with your own photos -->
 
 <img class="photo" src="https://picsum.photos/id/1011/500/700">
 <img class="photo" src="https://picsum.photos/id/1012/500/700">
@@ -374,31 +448,81 @@ Happy 3rd Anniversary 💖
 
 <script>
 
+/* PAGE 1 TO PAGE 2 */
+
 function goToPage2(){
+
     document.getElementById('page2').scrollIntoView({
         behavior:'smooth'
     });
+
+    setTimeout(() => {
+
+        document.getElementById('girl').classList.add('active');
+        document.getElementById('boy').classList.add('active');
+
+    }, 500);
 }
 
+/* PAGE 2 TO PAGE 3 */
+
 function goToPage3(){
+
     document.getElementById('page3').scrollIntoView({
         behavior:'smooth'
     });
 }
 
-/* shooting stars */
+/* CHAT FLOW */
+
+const messages = [
+    document.getElementById('msg1'),
+    document.getElementById('msg2'),
+    document.getElementById('msg3'),
+    document.getElementById('msg4')
+];
+
+let currentMessage = 0;
+
+const chatBtn = document.getElementById('chatBtn');
+const continueBtn = document.getElementById('continueBtn');
+
+chatBtn.addEventListener('click', () => {
+
+    if(currentMessage < messages.length){
+
+        messages[currentMessage].classList.remove('hidden');
+
+        currentMessage++;
+    }
+
+    if(currentMessage === messages.length){
+
+        chatBtn.classList.add('hidden');
+
+        continueBtn.classList.remove('hidden');
+    }
+});
+
+continueBtn.addEventListener('click', () => {
+    goToPage3();
+});
+
+/* SHOOTING STARS */
 
 const stars = document.getElementById('stars');
 
 for(let i=0;i<25;i++){
 
     let star = document.createElement('div');
+
     star.classList.add('star');
 
-    star.style.left = Math.random()*window.innerWidth + 'px';
-    star.style.top = Math.random()*window.innerHeight + 'px';
+    star.style.left = Math.random() * window.innerWidth + 'px';
 
-    star.style.animationDelay = Math.random()*5 + 's';
+    star.style.top = Math.random() * window.innerHeight + 'px';
+
+    star.style.animationDelay = Math.random() * 5 + 's';
 
     stars.appendChild(star);
 }
