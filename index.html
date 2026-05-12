@@ -412,24 +412,24 @@ body{
         <div class="avatar-col" id="girlCol">
             <div class="avatar-wrap">
                 <img
-                    src="Screenshot_20260512_134721.jpg"
+                    src="https://raw.githubusercontent.com/Adithya161202123/WA/main/Screenshot_20260512_134721.jpg"
                     class="girl-character"
                     id="girl"
                     alt="Her">
             </div>
-            <div class="avatar-label">Chum 💖</div>
+            <div class="avatar-label">Her 💖</div>
         </div>
 
         <!-- Boy avatar — slides in from right -->
         <div class="avatar-col boy-col" id="boyCol">
             <div class="avatar-wrap">
                 <img
-                    src="Screenshot_20260512_134748.jpg"
+                    src="https://raw.githubusercontent.com/Adithya161202123/WA/main/Screenshot_20260512_134748.jpg"
                     class="boy-character"
                     id="boy"
                     alt="Him">
             </div>
-            <div class="avatar-label">Chumbi 💙</div>
+            <div class="avatar-label">Him 💙</div>
         </div>
 
     </div>
@@ -517,19 +517,68 @@ continueBtn.addEventListener('click', () => { goToPage3(); });
 
 /* ---- 51-IMAGE FULL-SCREEN CROSSFADE SLIDESHOW ---- */
 
-/* Picsum photo IDs — 51 distinct landscape/portrait images */
 const photoIds = [
-    IMG-20260512-WA0004.jpg,IMG-20260512-WA0005.jpg,IMG-20260512-WA0006.jpg
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0004.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0005.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0006.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0007.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0008.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0009.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0010.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0011.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0012.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0013.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0014.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0015.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0016.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0017.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0018.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0019.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0020.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0021.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0022.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0023.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0024.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0025.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0026.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0027.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0028.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0029.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0030.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0031.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0032.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0033.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0034.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0035.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0036.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0037.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0038.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0039.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0040.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0041.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0042.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0043.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0044.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0045.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0046.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0047.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0048.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0049.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0050.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0051.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0052.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0053.jpg',
+    'https://raw.githubusercontent.com/Adithya161202123/WA/main/IMG-20260512-WA0054.jpg'
 ];
 
 const slideshowEl = document.getElementById('slideshow');
 const dotsEl      = document.getElementById('dots');
 
 /* Build all img elements + dots */
-photoIds.forEach((id, i) => {
+photoIds.forEach((url, i) => {
     const img = document.createElement('img');
     img.className = 'slide' + (i === 0 ? ' active' : '');
-    img.src = `${id}`;
+    img.src = url;
     img.alt = `Memory ${i + 1}`;
     slideshowEl.appendChild(img);
 
