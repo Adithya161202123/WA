@@ -529,7 +529,7 @@ const dotsEl      = document.getElementById('dots');
 photoIds.forEach((id, i) => {
     const img = document.createElement('img');
     img.className = 'slide' + (i === 0 ? ' active' : '');
-    img.src = `https://picsum.photos/id/${id}/1600/900`;
+    img.src = `${id}`;
     img.alt = `Memory ${i + 1}`;
     slideshowEl.appendChild(img);
 
