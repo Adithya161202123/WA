@@ -122,26 +122,26 @@ body{
 
 /* Circular wrapper — clips to a circle */
 .avatar-wrap{
-    width:150px;
-    height:150px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     overflow:hidden;
     border:4px solid #ff6f9f;
     box-shadow:0 8px 28px rgba(255,111,159,0.35);
     flex-shrink:0;
     position:relative;
+    background:#ffe0ef;
 }
 
-/* Image is bigger than the circle so we can pan to the face */
+/* Full image fits inside circle — no cropping at all */
 .girl-character,
 .boy-character{
-    position:absolute;
-    width:200%;          /* zoom in — 2x wider than the circle */
-    height:auto;
-    left:50%;
-    top:0%;              /* start from top of image */
-    transform:translateX(-50%);  /* centre horizontally */
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center center;
     display:block;
+    background:#ffe0ef;
 }
 
 /* Slide in from sides via the wrapper */
@@ -418,7 +418,6 @@ body{
                     src="https://raw.githubusercontent.com/Adithya161202123/WA/main/Screenshot_20260512_134721.jpg"
                     class="girl-character"
                     id="girl"
-                    style="top:5%;"
                     alt="Her">
             </div>
             <div class="avatar-label">Chum 💖</div>
@@ -431,7 +430,6 @@ body{
                     src="https://raw.githubusercontent.com/Adithya161202123/WA/main/Screenshot_20260512_134748.jpg"
                     class="boy-character"
                     id="boy"
-                    style="top:5%;"
                     alt="Him">
             </div>
             <div class="avatar-label">Chumbi 💙</div>
